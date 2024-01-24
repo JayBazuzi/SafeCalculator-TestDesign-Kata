@@ -14,5 +14,8 @@ jobs:
             - os: windows-latest
               shell_script_extension: .cmd
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
       - uses: actions/checkout@v3
       - run: "./${{ matrix.language }}/build_and_test${{ matrix.shell_script_extension }} | grep -q 'TODO: implement test'"
