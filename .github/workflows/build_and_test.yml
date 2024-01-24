@@ -15,4 +15,4 @@ jobs:
               shell_script_extension: .cmd
     steps:
       - uses: actions/checkout@v3
-      - run: ./${{ language }}/build_and_test${{ matrix.shell_script_extension }} \| grep -q "TODO: implement test"
+      - run: "./${{ matrix.language }}/build_and_test${{ matrix.shell_script_extension }} | grep -q 'TODO: implement test'"
